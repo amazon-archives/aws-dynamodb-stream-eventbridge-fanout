@@ -14,6 +14,8 @@ import software.amazon.awssdk.services.sqs.model.SendMessageRequest;
 
 /**
  * Implementation of {@link EventPublisher} using Amazon SQS SendMessage API.
+ *
+ * <p>It sends one SQS message for one DynamodbEvent.
  */
 @Slf4j
 @RequiredArgsConstructor

@@ -21,6 +21,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Implementation of {@link EventPublisher} using AWS EventBridge PutEvents API.
+ *
+ * <p>It publishes one DynamodbStreamRecord as one EventBridge event.
  */
 @Slf4j
 @RequiredArgsConstructor
