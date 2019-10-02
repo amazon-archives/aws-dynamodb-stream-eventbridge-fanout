@@ -1,14 +1,14 @@
 package com.amazonaws.dynamodb.stream.fanout.publisher;
 
-import java.util.List;
+import com.amazonaws.services.lambda.runtime.events.DynamodbEvent;
 
 /**
- * Publishing events.
+ * Publishing event.
  */
 public interface EventPublisher {
     /**
-     * Publish a list of events that have been deseriazlied into String.
-     * @param events a list of String events.
+     * Publish DynamoDB stream event.
+     * @param event DynamoDB stream event.
      */
-    void publish(List<String> events);
+    void publish(DynamodbEvent event);
 }

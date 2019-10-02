@@ -1,8 +1,13 @@
 package com.amazonaws.dynamodb.stream.fanout.publisher;
 
-import java.util.List;
+import com.amazonaws.services.lambda.runtime.events.DynamodbEvent;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import software.amazon.awssdk.services.sqs.SqsClient;
 import software.amazon.awssdk.services.sqs.model.SendMessageRequest;
@@ -13,16 +18,19 @@ import software.amazon.awssdk.services.sqs.model.SendMessageRequest;
 @Slf4j
 @RequiredArgsConstructor
 public class SqsEventPublisher implements EventPublisher {
+  private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper()
+          .setSerializationInclusion(JsonInclude.Include.NON_NULL);
+
   private final SqsClient sqs;
   private final String queueUrl;
 
   @Override
-  public void publish(final List<String> events) {
-    log.debug("Sending events {} to SQS queue {}", events, queueUrl);
-    events.forEach(event ->
-            sqs.sendMessage(SendMessageRequest.builder()
+  @SneakyThrows(JsonProcessingException.class)
+  public void publish(final DynamodbEvent event) {
+    log.debug("Sending events {} to SQS queue {}", event, queueUrl);
+    sqs.sendMessage(SendMessageRequest.builder()
                     .queueUrl(queueUrl)
-                    .messageBody(event)
-                    .build()));
+                    .messageBody(OBJECT_MAPPER.writeValueAsString(event))
+                    .build());
   }
 }

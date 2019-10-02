@@ -59,6 +59,6 @@ public class FanoutModule {
         EventPublisher failedEventPublisher = new SqsEventPublisher(sqs, Env.getDlqUrl());
         EventBridgeRetryClient eventBridgeRetryClient = new EventBridgeRetryClient(eventBridge, Env.getMaxAttempt());
         return new EventBridgePublisher(eventBridgeRetryClient, failedEventPublisher,
-                Env.getEventBusName(), Env.getDynamoDbStreamArn());
+                Env.getEventBusName());
     }
 }

@@ -16,10 +16,6 @@ public final class Env {
     return Integer.parseInt(getEnvValue("MAX_ATTEMPT"));
   }
 
-  public static String getDynamoDbStreamArn() {
-    return getEnvValue("DYNAMODB_STREAM_ARN");
-  }
-
   private static String getEnvValue(final String name) {
     return System.getenv(name);
   }

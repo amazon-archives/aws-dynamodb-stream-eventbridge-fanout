@@ -3,8 +3,9 @@ package com.amazonaws.dynamodb.stream.fanout.publisher;
 import static org.mockito.Mockito.verify;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.UUID;
+
+import com.amazonaws.services.lambda.runtime.events.DynamodbEvent;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -29,14 +30,17 @@ public class SqsPublisherTest {
 
     @Test
     public void publish() {
-        String record = UUID.randomUUID().toString();
-        List<String> events = Collections.singletonList(record);
+        DynamodbEvent event = new DynamodbEvent();
+        DynamodbEvent.DynamodbStreamRecord record = new DynamodbEvent.DynamodbStreamRecord();
+        record.setEventName("test");
+        event.setRecords(Collections.singletonList(record));
 
-        publisher.publish(events);
+        publisher.publish(event);
 
+        String expectedBody = "{\"records\":[{\"eventName\":\"test\"}]}";
         SendMessageRequest expected = SendMessageRequest.builder()
                 .queueUrl(QUEUE_URL)
-                .messageBody(record)
+                .messageBody(expectedBody)
                 .build();
         verify(sqs).sendMessage(expected);
     }
