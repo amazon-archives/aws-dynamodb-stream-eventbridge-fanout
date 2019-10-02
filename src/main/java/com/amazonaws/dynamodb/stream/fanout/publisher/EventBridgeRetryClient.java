@@ -36,7 +36,7 @@ public class EventBridgeRetryClient {
     PutEventsRequest requestCopy = request;
     int attemptCount = 0;
     while(attemptCount < maxAttempt) {
-      log.debug("{} attempt to put events {}", attemptCount, requestCopy);
+      log.debug("Attempt {} to put events {}", attemptCount + 1, requestCopy);
       PutEventsResponse response = eventBridge.putEvents(requestCopy);
 
       if (response.failedEntryCount() == 0) {
