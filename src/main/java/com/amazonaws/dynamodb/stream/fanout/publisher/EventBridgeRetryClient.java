@@ -56,7 +56,7 @@ public class EventBridgeRetryClient {
               .entries(failedEntries)
               .build();
 
-      attemptCount ++;
+      attemptCount++;
     }
     return requestCopy.entries();
   }
