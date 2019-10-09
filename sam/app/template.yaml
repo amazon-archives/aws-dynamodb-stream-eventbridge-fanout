@@ -1,6 +1,20 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 
+Metadata:
+  AWS::ServerlessRepo::Application:
+    Name: aws-dynamodb-stream-eventbridge-fanout
+    Description: >-
+      Lambda function that forwards events from a DynamoDB stream into EventBridge
+    Author: AWS Serverless Application Repository
+    SpdxLicenseId: Apache-2.0
+    Labels: [github, serverless, sam]
+    HomePageUrl: https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout
+    SemanticVersion: 0.1.1
+    SourceCodeUrl: https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout
+    LicenseUrl: ../../LICENSE
+    ReadmeUrl: ../../README.md
+
 Parameters:
   DynamoDBStreamArn:
     Type: String
