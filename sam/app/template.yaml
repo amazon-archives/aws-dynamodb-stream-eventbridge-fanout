@@ -5,7 +5,7 @@ Metadata:
   AWS::ServerlessRepo::Application:
     Name: aws-dynamodb-stream-eventbridge-fanout
     Description: >-
-      Lambda function that forwards events from a DynamoDB stream into EventBridge
+      This application forwards events from a DynamoDB stream into an EventBridge event bus.
     Author: AWS Serverless Application Repository
     SpdxLicenseId: Apache-2.0
     Labels: [serverless, dynamodb, eventbridge]
