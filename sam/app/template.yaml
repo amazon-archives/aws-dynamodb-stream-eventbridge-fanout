@@ -8,7 +8,7 @@ Metadata:
       Lambda function that forwards events from a DynamoDB stream into EventBridge
     Author: AWS Serverless Application Repository
     SpdxLicenseId: Apache-2.0
-    Labels: [github, serverless, sam]
+    Labels: [serverless, dynamodb, eventbridge]
     HomePageUrl: https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout
     SemanticVersion: 0.1.1
     SourceCodeUrl: https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout
