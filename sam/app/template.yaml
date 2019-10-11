@@ -12,8 +12,8 @@ Metadata:
     SpdxLicenseId: Apache-2.0
     Labels: [serverless, dynamodb, eventbridge]
     HomePageUrl: https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout
-    SemanticVersion: 0.1.1
-    SourceCodeUrl: https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout/tree/0.1.1
+    SemanticVersion: 1.0.0
+    SourceCodeUrl: https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout/tree/1.0.0
     LicenseUrl: ../../LICENSE
     ReadmeUrl: ../../README.md
 
