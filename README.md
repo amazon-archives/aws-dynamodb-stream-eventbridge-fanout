@@ -4,7 +4,7 @@ This repository contains a serverless app that forwards events from a [DynamoDB 
 
 The high-level architecture is as follows:
 
-![Architecture Diagram](./images/architecture_diagram.png)
+![Architecture Diagram](https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout/raw/master/images/architecture_diagram.png)
 
 A common pattern within cloud architectures is to trigger consumers based on changes to data, and this app helps to facilitate this pattern when using AWS services. 
 
