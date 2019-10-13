@@ -8,7 +8,7 @@ Metadata:
     Name: aws-dynamodb-stream-eventbridge-fanout
     Description: >-
       This application forwards events from a DynamoDB stream into an EventBridge event bus.
-    Author: AWS Serverless Application Repository
+    Author: AWS  Serverless Application Repository
     SpdxLicenseId: Apache-2.0
     Labels: [serverless, dynamodb, eventbridge]
     HomePageUrl: https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout
@@ -35,7 +35,7 @@ Resources:
   FanoutLambda:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: '../../target/aws-dynamodb-stream-eventbridge-fanout-0.1.1.jar'
+      CodeUri: '../../target/aws-dynamodb-stream-eventbridge-fanout-1.0.0.jar'
       Handler: 'com.amazonaws.dynamodb.stream.fanout.lambda.FanoutHandler::handleRequest'
       MemorySize: 768
       Timeout: 360

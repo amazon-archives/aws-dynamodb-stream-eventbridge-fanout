@@ -18,9 +18,9 @@ Resources:
     Properties:
       Location:
         ApplicationId: arn:aws:serverlessrepo:us-east-1:646794253159:applications/aws-sam-codepipeline-cd
-        SemanticVersion: 1.0.0
+        SemanticVersion: 0.1.3
       Parameters:
         GitHubOAuthToken: !Sub '{{resolve:secretsmanager:${GitHubOAuthTokenSecretId}}}'
         GitHubOwner: !Ref GitHubOwner
         GitHubRepo: aws-dynamodb-stream-eventbridge-fanout
-        PublishToSar: true
+        PublishToSAR: true
