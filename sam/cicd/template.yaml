@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: >-
+  This template sets up CD pipeline for aws-dynamodb-stream-eventbridge-fanout
+
+Parameters:
+  GitHubOAuthTokenSecretId:
+    Type: String
+    Description: The AWS Secrets Manager Secret Id that stores Github OAuth token.
+    Default: 'GitHubOAuthToken'
+  GitHubOwner:
+    Type: String
+    Description: The GitHub owner of the repository.
+    Default: 'awslabs'
+Resources:
+  CD:
+    Type: 'AWS::Serverless::Application'
+    Properties:
+      Location:
+        ApplicationId: arn:aws:serverlessrepo:us-east-1:646794253159:applications/aws-sam-codepipeline-cd
+        SemanticVersion: 0.1.3
+      Parameters:
+        GitHubOAuthToken: !Sub '{{resolve:secretsmanager:${GitHubOAuthTokenSecretId}}}'
+        GitHubOwner: !Ref GitHubOwner
+        GitHubRepo: aws-dynamodb-stream-eventbridge-fanout
+        PublishToSAR: true
