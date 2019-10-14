@@ -1,4 +1,4 @@
-## AWS DynamoDB Stream EventBridge Fanout 
+## AWS DynamoDB Stream EventBridge Fanout ![Build Status](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiM2U1eEhja0F1U2dGSzV6NDdhS3VqVnhiTUNDV2pzQmp6WUFLa3F6dll1UVQwek0wYTVxaFlMRWliWTlmaVVpenZpb3FaOTVMdHovMThFZWx1VjBkL0VJPSIsIml2UGFyYW1ldGVyU3BlYyI6ImE3SjluN2NZYjNVKzZuVU0iLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
 This repository contains a serverless app that forwards events from a [DynamoDB stream](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html) to an [Amazon EventBridge](https://aws.amazon.com/eventbridge/) event bus. 
 
