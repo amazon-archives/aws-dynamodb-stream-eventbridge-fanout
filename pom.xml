@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws.serverless</groupId>
   <artifactId>aws-dynamodb-stream-eventbridge-fanout</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 
   <name>aws-dynamodb-stream-eventbridge-fanout</name>
   <url>https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout</url>
