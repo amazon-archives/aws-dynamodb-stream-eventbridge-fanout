@@ -12,8 +12,8 @@ Metadata:
     SpdxLicenseId: Apache-2.0
     Labels: [serverless, dynamodb, eventbridge]
     HomePageUrl: https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout
-    SemanticVersion: 1.0.1
-    SourceCodeUrl: https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout/tree/1.0.1
+    SemanticVersion: 1.0.2
+    SourceCodeUrl: https://github.com/awslabs/aws-dynamodb-stream-eventbridge-fanout/tree/1.0.2
     LicenseUrl: ../../LICENSE
     ReadmeUrl: ../../README.md
 
@@ -35,7 +35,7 @@ Resources:
   FanoutLambda:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: '../../target/aws-dynamodb-stream-eventbridge-fanout-1.0.1.jar'
+      CodeUri: '../../target/aws-dynamodb-stream-eventbridge-fanout-1.0.2.jar'
       Handler: 'com.amazonaws.dynamodb.stream.fanout.lambda.FanoutHandler::handleRequest'
       MemorySize: 768
       Timeout: 360
